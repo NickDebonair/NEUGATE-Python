@@ -17,7 +17,13 @@
 
 
 
-year_list = [int(x) for x in input().split()]
+# year_list = [int(x) for x in input().split()]
+year_list = []
+year_list_elem = input().split()
+print(year_list_elem)
+for x in year_list_elem:
+    year_list.append(int(x))
+print(year_list)
 year_msg = []
 year_dict = {}
 year_elem = ''
