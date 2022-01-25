@@ -16,12 +16,20 @@
 # ■□■□■□■□
 # ■□■□■□■□
 # ■□■□■□■□
-size = int(input('表示したいヨコ縞模様の一辺の大きさを入力してください'))
+size = int(input('表示したいタテ縞模様の一辺の大きさを入力してください'))
 for i in range(size):
     print('')
-    if i % 2 != 0:
-        for j in range(size):
-            print('□' * j + '■' * j, end='')
-    else:
-        for j in range(size):
+    # if size == 1:
+    #     for j in range(size):
+    #         print('■', end='')
+    #         print('□', end='')
+    # elif size % 2 != 0 and size >= 3:
+    #     for j in range(size):
+    #         print('■□', end='')
+    # else:
+    for j in range(size):
+        if j % 2 != 0:
             print('■', end='')
+        elif j % 2 == 0:
+            print('□', end='')
+

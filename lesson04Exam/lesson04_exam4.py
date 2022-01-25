@@ -15,11 +15,12 @@
 # ***
 # **
 # *
-for i in range(9):
+num = 9
+for i in range(num):
     for j in range(1):
-        if i <= 4:
+        if i < (num - num // 2):
             print('*' * (i+1))
         else:
-            print('*' * (9-i))
+            print('*' * (num-i))
         # for j in range(4):
         #     print('*' * ())

@@ -13,5 +13,5 @@
 # **********
 for i in range(5):
     print('')
-    for j in range(10):
+    for j in range(10): #'*'を10回繰り返して改行を5回繰り返す
         print('*', end='')
