@@ -21,6 +21,8 @@ for i in range(11):
     print(str(sum_list[0]), end='')
     for j in range(i):
         print( '+' + str(sum_list[count-i]), end='')
+        # print(sum_list)
+        # print(sum_list[count], end='')
         count += 1
     print(' = ' + str(total), end='')
     print()
