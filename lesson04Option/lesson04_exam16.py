@@ -84,28 +84,55 @@ mine_sum = 10
 
 
 import random
-cr_num = 4
+print('一辺のマス数を、2以上かつ26以下の整数で入力してください')
+cr_num = int(input('>>'))
 column_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 
-mine_sum = 10
-mine_num_temp = 0
+print('地雷の数を、99以下の整数で入力してください')
+mine_sum = int(input('>>'))
 mine_list = []
 mine_list.append(random.randint(0, 1))
 for i in range(1, cr_num*cr_num):
     # if mine_sum - len(mine_list) == mine_sum - sum(mine_list):
     #     mine_list.append(1)
-    if sum(mine_list) >= mine_sum:
+    if sum(mine_list) == mine_sum:
         mine_list.append(0)
-    if cr_num*cr_num - len(mine_list) > mine_sum - sum(mine_list):
+    elif cr_num*cr_num - len(mine_list) == mine_sum - sum(mine_list):
         mine_list.append(1)
     else:
         mine_list.append(random.randint(0, 1))
 
 
 print(mine_list)
+print('   ', end='')
+for i in range(cr_num):
+    print('  ' + column_list[i] + ' ', end='')
+print()
 
 
+for i in range(0, cr_num):
+    print('   ', end='')
+    print('+---' * cr_num + '+')
+    print(' '+ str(i+1) + ' ',end='')
+    for j in range(0, cr_num):
+        if mine_list[i*cr_num + j] == 1:
+            print('| ' + ('*' * 1) + ' ', end='')
+        elif mine_list[i*cr_num + j] == 0:
+            print('| ' + '  ', end='')
+        if j == cr_num - 1:
+            print('|', end='')
+    print()
+print('   ' + '+---' * cr_num + '+')
 
+#
+# for i in range(0, cr_num):
+#     print('+---' * cr_num + '+')
+#     for j in range(0, cr_num):
+#         print('| ' + ('*' * 1) + ' ', end='')
+#         if j == cr_num - 1:
+#             print('|', end='')
+#     print()
+# print('+---' * cr_num + '+')
 
 
 
@@ -125,20 +152,15 @@ print(mine_list)
 #
 # print(mine_list)
 
-mine_random = random.randint(1, mine_sum)
-mine_random2 = random.randint(1, (mine_sum) - (mine_random))
-mine_random_last = mine_random
-num = 10
-for i in range(1, num):
-    print('+---' * (num - 1) + '+')
-    for j in range(1, num):
-        if (i * j) < 10:
-            print('| ' + ('*' * 1) + ' ', end='')
-            if j == 9:
-                print('|', end='')
-        elif ( i * j ) >= 10:
-            print('| ' + ('*' * 1)  + ' ', end='')
-            if j == 9:
-                print('|', end='')
-    print()
-print('+---' * 9 + '+')
+# mine_random = random.randint(1, mine_sum)
+# mine_random2 = random.randint(1, (mine_sum) - (mine_random))
+# mine_random_last = mine_random
+# num = 10
+# for i in range(1, num):
+#     print('+---' * (num - 1) + '+')
+#     for j in range(1, num):
+#         print('| ' + ('*' * 1) + ' ', end='')
+#         if j == num - 1:
+#             print('|', end='')
+#     print()
+# print('+---' * (num - 1) + '+')
